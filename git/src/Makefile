@@ -1,6 +1,6 @@
 .SUFFIXES: .tex .dvi .aux .bbl .pdf .md
 all: c83.dvi c83.pdf
-PARTS = 0.maegaki.tex 1.about_git.tex 2.release.tex 3.branch.tex 4.workflow.tex
+PARTS = maegaki.tex about_git.tex release.tex branch.tex workflow.tex
 
 .dvi.pdf:
 	dvipdfmx -p a4 -f dlbase14.map -o $@ $<

@@ -68,11 +68,7 @@ master以外のリモートブランチはいつでも **破棄** してリセ�
 リモートブランチを作りなおすには次のようにします。
 
 ```
-$ git push origin :topic_master  # 空のブランチでリモートのtopic_masterを書き換て リモートブランチを消す
-$ git checkout master
-$ git branch -D topic_master     # マージされてないブランチを強制的に消すのは -D
-$ git checkout -b topic_master
-$ git push origin topic_master
+$ git push --force origin master:topic_master  # masterでtopic_masterを書きかえる
 ```
 
 その後、他の人に対して、リモートブランチを作りなおしたことを教えてください。
@@ -80,9 +76,9 @@ $ git push origin topic_master
 次のようにリセットします。
 
 ```
-$ git fetch --all                       # リモートの情報を更新する
+$ git fetch --all                  # リモートの情報を更新する
 $ git checkout topic_master
-$ git reset --hard origin/topic_master  # リモートのtopic_masterブランチにリセット
+$ git reset --hard origin/topic_master  # リモートのtopic_masterにリセット
 ```
 
 リモートブランチはいつでも破棄される可能性があるので、
@@ -156,6 +152,6 @@ $ git checkout master
 $ git merge release
 ```
 
-なお、githubでPullRequestをマージすると --no-ff と同じ処理がされます。
+githubでPullRequestをマージすると --no-ff と同じ処理がされます。
 なので、githubでPullRequestベースで開発をするときは、リリースブランチをPullRequestするような方法はあまり推奨しません。
 トピックブランチ一つ一つをPullRequedtしましょう。

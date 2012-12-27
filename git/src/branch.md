@@ -41,5 +41,4 @@ Bブランチで作られた機能は十分にテストされているので、�
 これは非常にストレスがかかります。
 
 \input{"./gitflow.tex"}
-\newpage
 \input{"./branch_rule.tex"}
